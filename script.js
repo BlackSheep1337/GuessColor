@@ -55,7 +55,8 @@ function trueOrFalse(event) {
   if (bgValue === event.target.style.background) {
     answer.innerHTML = 'Acertou! Novas Cores!';
     score.innerText = Number(score.innerText) + 3;
-    storageScore();
+    getBackgroundColor();
+    handleRgbValue();
   } else {
     answer.innerHTML = 'Errou! Tente novamente!';
     score.innerHTML = 0;
@@ -66,9 +67,4 @@ function reload() {
   getBackgroundColor();
   handleRgbValue();
   document.getElementById('answer').innerHTML = 'Escolha uma cor';
-}
-
-function storageScore() {
-  const score = document.getElementById('score');
-  sessionStorage.setItem('score', score.innerHTML)
 }
